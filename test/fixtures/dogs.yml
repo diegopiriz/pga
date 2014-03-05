@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birtdate: 2014-03-04
+  admission: 2014-03-04
+  primary_color: MyString
+  secondary_color: MyString
+  origin: MyText
+  personality: MyText
+  size_id: 1
+  status_id: 1
+
+two:
+  name: MyString
+  birtdate: 2014-03-04
+  admission: 2014-03-04
+  primary_color: MyString
+  secondary_color: MyString
+  origin: MyText
+  personality: MyText
+  size_id: 1
+  status_id: 1

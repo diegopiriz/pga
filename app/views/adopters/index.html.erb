@@ -1,0 +1,33 @@
+<h1>Listing adopters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adopters.each do |adopter| %>
+      <tr>
+        <td><%= adopter.name %></td>
+        <td><%= adopter.phone %></td>
+        <td><%= adopter.email %></td>
+        <td><%= adopter.address %></td>
+        <td><%= link_to 'Show', adopter %></td>
+        <td><%= link_to 'Edit', edit_adopter_path(adopter) %></td>
+        <td><%= link_to 'Destroy', adopter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adopter', new_adopter_path %>

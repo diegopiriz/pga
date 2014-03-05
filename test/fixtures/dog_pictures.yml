@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dog_id: 1
+  data: 
+  type: 
+  filename: MyString
+
+two:
+  dog_id: 1
+  data: 
+  type: 
+  filename: MyString
