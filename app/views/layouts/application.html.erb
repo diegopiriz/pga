@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pga</title>
+  <title>PGA | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 
-<%= yield %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "PGA", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to I18n.t('home'),    '#' %></li>
+            <li><%= link_to I18n.t('contact'), '#' %></li>
+            <li><%= link_to I18n.t('search'),  '#' %></li>
+            <li><%= link_to I18n.t('login'),   '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <br />
+  <br />
+  <div class="container">
+    <%= yield %>
+  </div>
 
+  <footer class="footer">
+    <div class="navbar-inner">
+      <div class="container">
+        <p>
+          <%= I18n.t('slogan') %> <i><%= link_to "Mandinga", '#' %></i>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
+
+

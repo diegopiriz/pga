@@ -1,0 +1,18 @@
+es:
+  dog:
+    name: "Nombre"
+    birthdate: "Fecha de nacimiento"
+    admission_date: "Fecha de admisión"
+    primary_color: "Color primario"
+    secondary_color: "Color secundario"
+    size: "Tamaño"
+    status: "Estado"
+    origin: "Origen"
+    personality: "Personalidad"
+
+    new_dog: "Nuevo ingreso"
+    back: "Volver"
+
+
+
+    age: "Edad"

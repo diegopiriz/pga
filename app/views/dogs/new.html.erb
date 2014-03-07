@@ -1,5 +1,5 @@
-<h1>New dog</h1>
+<h1><%=t 'new_dog', scope: 'dog' %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', dogs_path %>
+<%= link_to I18n.t('back', scope: 'dog'), dogs_path %>

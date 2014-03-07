@@ -11,43 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :birtdate %><br>
-    <%= f.date_select :birtdate, discard_day: true, order: [:month, :year] %>
-  </div>
-  <div class="field">
-    <%= f.label :admission %><br>
-    <%= f.date_select :admission, discard_day: true, order: [:month, :year]  %>
-  </div>
-  <div class="field">
-    <%= f.label :primary_color %><br>
-    <%= f.collection_select :primary_color, Color.all, :id, :name, :prompt => false %>
-  </div>
-  <div class="field">
-    <%= f.label :secondary_color %><br>
-    <%= f.collection_select :secondary_color, Color.all, :id, :name, :prompt => true %>
-  </div>
-  <div class="field">
-    <%= f.label :size_id %><br>
-    <%= f.collection_select :size_id, Size.all, :id, :description, :prompt => false %>
-  </div>
-  <div class="field">
-    <%= f.label :status_id %><br>
-    <%= f.collection_select :status_id, Status.all, :id, :description, :prompt => false %>
-  </div>
-  <div class="field">
-    <%= f.label :origin %><br>
-    <%= f.text_area :origin, rows: 10, cols: 50 %>
-  </div>
-  <div class="field">
-    <%= f.label :personality %><br>
-    <%= f.text_area :personality, rows: 10, cols: 50 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('name', scope: 'dog') %>:</th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('status', scope: 'dog') %>:</th>
+      <td><%= f.collection_select :status_id, Status.all, :id, :description, :prompt => false %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('birthdate', scope: 'dog') %>:</th>
+      <td><%= f.date_select :birtdate, discard_day: true, order: [:month, :year], start_year: Time.now.year - 20, end_year: Time.now.year %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('admission_date', scope: 'dog') %>:</th>
+      <td><%= f.date_select :admission, discard_day: true, order: [:month, :year], start_year: Time.now.year - 20, end_year: Time.now.year  %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('primary_color', scope: 'dog') %>:</th>
+      <td><%= f.collection_select :primary_color, Color.all, :id, :name, :prompt => false %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('secondary_color', scope: 'dog') %>:</th>
+      <td><%= f.collection_select :secondary_color, Color.all, :id, :name, :prompt => true %></td>
+    </tr>
+    <tr>
+      <th class="text-right"><%= f.label I18n.t('size', scope: 'dog') %>:</th>
+      <td><%= f.collection_select :size_id, Size.all, :id, :description, :prompt => false %></td>
+    </tr>
+    <tr>
+      <th class="text-right" valign="top"><%= f.label I18n.t('origin', scope: 'dog') %>:</th>
+      <td><%= f.text_area :origin, rows: 10, cols: 80 %></td>
+    </tr>
+    <tr>
+      <th class="text-right" valign="top"><%= f.label I18n.t('personality', scope: 'dog') %>:</th>
+      <td><%= f.text_area :personality, rows: 10, cols: 80 %></td>
+    </tr>
+    <tr>
+      <td class="text-right" colspan="2">
+        <%= f.submit %>
+      </td>
+    </tr>
+  </table>
 <% end %>

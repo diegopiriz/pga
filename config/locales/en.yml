@@ -20,4 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  age_in_years_and_months: "%{years} years and %{months} months"
+  age_in_months: "%{months} months"
