@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>PGA | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -9,40 +9,15 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
+
 <body>
-
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to "PGA", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to I18n.t('home'),    '#' %></li>
-            <li><%= link_to I18n.t('contact'), '#' %></li>
-            <li><%= link_to I18n.t('search'),  '#' %></li>
-            <li><%= link_to I18n.t('login'),   '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <br />
-  <br />
+  <%= render "/layouts/header" %>
   <div class="container">
-    <%= yield %>
-  </div>
-
-  <footer class="footer">
-    <div class="navbar-inner">
-      <div class="container">
-        <p>
-          <%= I18n.t('slogan') %> <i><%= link_to "Mandinga", '#' %></i>
-        </p>
-      </div>
+    <div id="page">
+      <%= yield %>
     </div>
-  </footer>
+  </div>
+  <%= render "/layouts/footer" %>
 </body>
 </html>
-
-
 

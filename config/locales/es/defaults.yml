@@ -1,4 +1,9 @@
 es:
+  helpers:
+    submit:
+      create: "Crear"
+      update: "Actualizar"
+
   date:
     abbr_day_names:
     - dom

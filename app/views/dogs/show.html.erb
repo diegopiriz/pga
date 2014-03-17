@@ -7,7 +7,7 @@
 <div>
   <!-- ADMISSION -->
   <p class="pull-right">
-    <strong><%=t 'admission'%>:</strong>
+    <strong><%=t 'admission_date', scope: 'dog' %>:</strong>
     <%=l @dog.admission, format: :long %>
   </p>
   <!-- NAME -->
@@ -27,12 +27,12 @@
 <table>
   <!-- STATUS -->
   <tr>
-    <th class="text-right"><%=t 'status' %>:</th>
+    <th class="text-right"><%=t 'status', scope: 'dog' %>:</th>
     <td class="capitalize"><%=Status.find_by(id: @dog.status_id).description %></td>
   </tr>
   <!-- AGE -->
   <tr>
-    <th class="text-right"><%=t 'age' %>:</th>
+    <th class="text-right"><%=t 'age', scope: 'dog' %>:</th>
     <td>
       <%
         age = age_in_months @dog.birtdate 
@@ -40,39 +40,39 @@
         months = months age
       %>
       <% if years != 0%>
-        <%=t 'age_in_years_and_months', years: years, months: months %>
+        <%=t 'age_in_years_and_months', years: years, months: months, scope: 'dog' %>
       <% else %>
-        <%=t 'age_in_months', months: months %>
+        <%=t 'age_in_months', months: months, scope: 'dog' %>
       <% end %>
     </td>
   </tr>
   <!-- SIZE -->
   <tr>
-    <th class="text-right"><%=t 'size' %>:</th>
+    <th class="text-right"><%=t 'size', scope: 'dog' %>:</th>
     <td class="capitalize"><%=Size.find_by(id: @dog.size_id).description %></td>
   </tr>
   <!-- COLORS -->
   <tr>
-    <th class="text-right"><%=t 'primary_color' %>:</th>
+    <th class="text-right"><%=t 'primary_color', scope: 'dog' %>:</th>
     <td class="capitalize"><%= color_name @dog.primary_color%></td>
   </tr>
   <tr>
-    <th class="text-right"><%=t 'secondary_color' %>:</th>
+    <th class="text-right"><%=t 'secondary_color', scope: 'dog' %>:</th>
     <td class="capitalize"><%= color_name @dog.secondary_color%></td>
   </tr>
   <!-- ORIGIN -->
   <tr>
-    <th class="text-right" valign="top"><%=t 'origin' %>:</th>
+    <th class="text-right" valign="top"><%=t 'origin', scope: 'dog' %>:</th>
     <td><%= @dog.origin %></td>
   </tr>
   <!-- PERSONALITY -->
   <tr>
-    <th class="text-right" valign="top"><%=t 'personality' %>:</th>
+    <th class="text-right" valign="top"><%=t 'personality', scope: 'dog' %>:</th>
     <td><%= @dog.personality %></td>
   </tr>
 </table>
 
 <div class="pull-right">
-  <%= link_to I18n.t('edit'), edit_dog_path(@dog) %> |
-  <%= link_to I18n.t('back'), dogs_path %>
+  <%= link_to I18n.t('edit', scope: 'dog'), edit_dog_path(@dog) %> |
+  <%= link_to I18n.t('back', scope: 'dog'), dogs_path %>
 </div>

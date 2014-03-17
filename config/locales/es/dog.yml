@@ -9,9 +9,15 @@ es:
     status: "Estado"
     origin: "Origen"
     personality: "Personalidad"
+    undefined_color: "--"
+    select_color: "Seleccionar"
 
-    new_dog: "Nuevo ingreso"
+    new_title: "Nuevo ingreso"
+    edit_title: "Actualizar a %{name}"
     back: "Volver"
+    edit: "Actualizar"
+    show: "Ver"
+    adopt: "Adoptar"
 
 
 

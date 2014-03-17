@@ -1,0 +1,25 @@
+<% current_page = yield(:current_page) %>
+
+<div id="header">
+  <div id="logo">
+    <h1><a href="#">Refugio PGA</a></h1>
+    <p>un oasis para callejeros</p>
+  </div>
+</div>
+<!-- end #header -->
+<div id="menu">
+  <ul>
+    <li class=<%=nav_class(current_page, "home")   %>>
+    <%= link_to I18n.t("home", scope: "navigation"), static_pages_home_path %>
+    </li>
+    <li class=<%=nav_class(current_page, "contact")   %>>
+    <%= link_to I18n.t("contact", scope: "navigation"), static_pages_contact_path %>
+    </li>
+    <li class=<%=nav_class(current_page, "search")   %>>
+    <%= link_to I18n.t("search", scope: "navigation"), static_pages_search_path %>
+    </li>
+    <li class=<%=nav_class(current_page, "login")   %>>
+    <%= link_to I18n.t("login", scope: "navigation"), static_pages_login_path %>
+    </li>
+  </ul>
+</div>

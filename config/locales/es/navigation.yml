@@ -1,0 +1,7 @@
+es:
+  navigation:
+    home: "Principal"
+    contact: "Contacto"
+    search: "Buscar"
+    login: "Entrar"
+    slogan: "Esto es cosa de"

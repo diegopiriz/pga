@@ -1,10 +1,6 @@
-<% provide(:title, 'Home') %>
-<br />
-<div class="jumbotron">
-  <h1 class="text-center">Bienvenido a PGA</h1>
-  <h2>
-    Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an.
-  </h2>
-</div>
-
-<%= render 'dogs/thumbnail_list' %>
+<% provide(:current_page, "home") %>
+<% provide(:title, I18n.t('home', scope: 'navigation')) %>
+<%= render "home_article" %>
+<%= render "separator" %>
+<%= render "adoptions_list" %>
+<%= render "separator" %>

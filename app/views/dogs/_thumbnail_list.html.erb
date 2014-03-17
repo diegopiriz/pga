@@ -1,10 +1,18 @@
-<% 2.times do %>
+<%
+  rows = (defined?(locals) && locals[:rows]) || 2
+  columns = (defined?(locals) && locals[:columns]) || 3
+  dogs = get_top_dogs(rows * columns)
+%>
+<% rows.times do |r| %>
   <div class="row">
-  <% 3.times do %>
-    <div class="col-sm-6 col-md-4">
-      <%= render 'dogs/thumbnail' %>
-    </div>
-  <% end %>
+    <% columns.times do |c| %>
+      <div class="col-sm-6 col-md-4">
+        <% dog = dogs[r * columns + c] %>
+        <% if dog %>
+          <%= render 'dogs/thumbnail', locals: { dog: dog } %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <br />
 <% end %>

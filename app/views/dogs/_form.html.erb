@@ -34,7 +34,7 @@
     </tr>
     <tr>
       <th class="text-right"><%= f.label I18n.t('secondary_color', scope: 'dog') %>:</th>
-      <td><%= f.collection_select :secondary_color, Color.all, :id, :name, :prompt => true %></td>
+      <td><%= f.collection_select :secondary_color, Color.all, :id, :name, :prompt => I18n.t("select_color", scope: 'dog') %></td>
     </tr>
     <tr>
       <th class="text-right"><%= f.label I18n.t('size', scope: 'dog') %>:</th>

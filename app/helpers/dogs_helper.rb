@@ -16,6 +16,10 @@ module DogsHelper
 
   def color_name(color_id)
     c = Color.find_by id:color_id
-    (c && c.name) || I18n.t('undefined')
+    (c && c.name) || I18n.t('undefined_color', scope: 'dog')
+  end
+
+  def get_top_dogs(count)
+    Dog.take(count) * 3
   end
 end

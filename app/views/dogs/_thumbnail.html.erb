@@ -1,9 +1,10 @@
+<% dog = locals[:dog] %>
 <div class="thumbnail">
     <%= image_tag("generic_dog.jpg", size: "171x180") %>
-    <h3>Lorem ipsum</h3>
-    <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.</p>
+    <h3><%= dog.name %></h3>
+    <!-- <p><%= dog.origin %></p> -->
     <ul class="pager">
-      <li><a href="#">Ver</a></li>
-      <li><a href="#">Adoptar</a></li>
+      <li><%= link_to I18n.t('show', scope: 'dog'), dog %></li>
+      <li><%= link_to I18n.t('adopt', scope: 'dog'), '#' %></li>
     </ul>
 </div>
