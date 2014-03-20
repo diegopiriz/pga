@@ -1,0 +1,27 @@
+<h1>Listing personalities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personalities.each do |personality| %>
+      <tr>
+        <td><%= personality.description %></td>
+        <td><%= link_to 'Show', personality %></td>
+        <td><%= link_to 'Edit', edit_personality_path(personality) %></td>
+        <td><%= link_to 'Destroy', personality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personality', new_personality_path %>

@@ -195,3 +195,54 @@ h1 {
   text-decoration: underline;
   color: #82A2B9;
 }
+
+
+
+/*DOG's FORM*/
+
+.form {
+  table, th, td, tr {
+    /*border: solid red 1px;*/
+  }
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: right;
+  }
+  .submit {
+    margin-right: 25px;
+  }
+}
+
+
+.search_result {
+  img {
+    /*float: left;*/
+    margin-bottom: 5px;
+  }
+  .info {
+
+  }
+}
+
+
+/*THUMBNAILS*/
+.thumbnail {
+  .info {
+    text-align: center;
+    h4 {
+      text-transform: uppercase;
+      span {
+        font-weight: bold;
+        font-family: Georgia;
+      }
+      .Macho {
+        color: skyblue;
+      }
+      .Hembra {
+        color: pink;
+      }
+    }
+  }
+}

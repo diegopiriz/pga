@@ -1,10 +1,14 @@
 <% dog = locals[:dog] %>
 <div class="thumbnail">
     <%= image_tag("generic_dog.jpg", size: "171x180") %>
-    <h3><%= dog.name %></h3>
-    <!-- <p><%= dog.origin %></p> -->
-    <ul class="pager">
-      <li><%= link_to I18n.t('show', scope: 'dog'), dog %></li>
-      <li><%= link_to I18n.t('adopt', scope: 'dog'), '#' %></li>
-    </ul>
+    <div class="info">
+      <h4><%= dog.name %> - <span class=<%= dog.sex %>><%= raw sex_symbol(dog.sex) %></span></h4>
+      <%= image_tag(size_image(dog), size: "100x50") %>
+      <h5><%= age(dog) %></h5>
+      <div class="buttons">
+        <%= link_to 'Show', dog %>
+        <%= link_to 'Edit', edit_dog_path(dog) %>
+        <%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
 </div>

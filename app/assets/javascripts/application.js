@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
+//= require magicsuggest-1.3.1-min

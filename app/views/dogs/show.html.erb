@@ -1,78 +1,49 @@
-<!-- NOTICE -->
-<% if notice %>
-	<br />
-	<p id="notice"><%= notice %></p>
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<div>
-  <!-- ADMISSION -->
-  <p class="pull-right">
-    <strong><%=t 'admission_date', scope: 'dog' %>:</strong>
-    <%=l @dog.admission, format: :long %>
-  </p>
-  <!-- NAME -->
-  <h1><%= @dog.name %></h1>
-</div>
-<!-- CAROUSEL -->
-<div class="jumbotron">
-  <div class="row">
-  <% 4.times do %>
-    <div class="col-md-3">
-      <%= image_tag("generic_dog.jpg", size: "171x180") %>
-    </div>
-  <% end %>
-  </div>
-</div>
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
 
-<table>
-  <!-- STATUS -->
-  <tr>
-    <th class="text-right"><%=t 'status', scope: 'dog' %>:</th>
-    <td class="capitalize"><%=Status.find_by(id: @dog.status_id).description %></td>
-  </tr>
-  <!-- AGE -->
-  <tr>
-    <th class="text-right"><%=t 'age', scope: 'dog' %>:</th>
-    <td>
-      <%
-        age = age_in_months @dog.birtdate 
-        years = years age
-        months = months age
-      %>
-      <% if years != 0%>
-        <%=t 'age_in_years_and_months', years: years, months: months, scope: 'dog' %>
-      <% else %>
-        <%=t 'age_in_months', months: months, scope: 'dog' %>
-      <% end %>
-    </td>
-  </tr>
-  <!-- SIZE -->
-  <tr>
-    <th class="text-right"><%=t 'size', scope: 'dog' %>:</th>
-    <td class="capitalize"><%=Size.find_by(id: @dog.size_id).description %></td>
-  </tr>
-  <!-- COLORS -->
-  <tr>
-    <th class="text-right"><%=t 'primary_color', scope: 'dog' %>:</th>
-    <td class="capitalize"><%= color_name @dog.primary_color%></td>
-  </tr>
-  <tr>
-    <th class="text-right"><%=t 'secondary_color', scope: 'dog' %>:</th>
-    <td class="capitalize"><%= color_name @dog.secondary_color%></td>
-  </tr>
-  <!-- ORIGIN -->
-  <tr>
-    <th class="text-right" valign="top"><%=t 'origin', scope: 'dog' %>:</th>
-    <td><%= @dog.origin %></td>
-  </tr>
-  <!-- PERSONALITY -->
-  <tr>
-    <th class="text-right" valign="top"><%=t 'personality', scope: 'dog' %>:</th>
-    <td><%= @dog.personality %></td>
-  </tr>
-</table>
+<p>
+  <strong>Birthdate:</strong>
+  <%= @dog.birthdate %>
+</p>
 
-<div class="pull-right">
-  <%= link_to I18n.t('edit', scope: 'dog'), edit_dog_path(@dog) %> |
-  <%= link_to I18n.t('back', scope: 'dog'), dogs_path %>
-</div>
+<p>
+  <strong>Admission:</strong>
+  <%= @dog.admission %>
+</p>
+
+<p>
+  <strong>Colors:</strong>
+  <%= @dog.colors %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @dog.story %>
+</p>
+
+<p>
+  <strong>Personality:</strong>
+  <%= @dog.personality %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @dog.weight %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @dog.status %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @dog.sex %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>

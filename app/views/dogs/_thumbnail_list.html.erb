@@ -1,7 +1,7 @@
 <%
-  rows = (defined?(locals) && locals[:rows]) || 2
   columns = (defined?(locals) && locals[:columns]) || 3
-  dogs = get_top_dogs(rows * columns)
+  dogs = (defined?(locals) && locals[:dogs]) || top_dogs
+  rows = (dogs.size.to_f / columns).ceil
 %>
 <% rows.times do |r| %>
   <div class="row">

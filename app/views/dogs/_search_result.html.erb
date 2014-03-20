@@ -1,0 +1,30 @@
+<% dog = locals[:dog] %>
+
+<div class="search_result">
+  <%= image_tag("generic_dog.jpg", size: "150x150") %>
+  <div class="info">
+    <h4><%= dog.name %></h4>
+    <p><%= dog.sex %> | <%= size(dog) %> | <%= age(dog) %></p>
+    <div class="buttons">
+      <%= link_to 'Show', dog %>
+      <%= link_to 'Edit', edit_dog_path(dog) %>
+      <%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>
+
+<table>
+    <tr>
+    <td><%= dog.name %></td>
+    <td><%= dog.birthdate %></td>
+    <td><%= dog.admission %></td>
+    <td><%= dog.colors %></td>
+    <td><%= dog.story %></td>
+    <td><%= dog.personality %></td>
+    <td><%= dog.weight %></td>
+    <td><%= dog.status %></td>
+    <td><%= link_to 'Show', dog %></td>
+    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+    <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>  
+</table>

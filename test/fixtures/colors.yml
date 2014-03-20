@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+negro:
+  name: Negro
+  code: 000000
 
-two:
-  name: MyString
+blanco:
+  name: Blanco
+  code: FFFFFF
+
+gris:
+  name: Gris
+  code: 888888

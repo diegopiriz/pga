@@ -1,6 +1,6 @@
-<h1><%=t 'edit_title', name: @dog.name, scope: 'dog' %></h1>
+<h1>Actualizar a <%= @dog.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to I18n.t('show', scope: 'dog'), @dog %> |
-<%= link_to I18n.t('back', scope: 'dog'), dogs_path %>
+<%#= link_to 'Show', @dog %>
+<%#= link_to 'Back', dogs_path %>

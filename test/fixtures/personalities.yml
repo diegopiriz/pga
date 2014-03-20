@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: juguetón
+
+two:
+  description: tranquilo
+
+three:
+  description: compañero

@@ -1,0 +1,31 @@
+<h1>Listing sizes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Low</th>
+      <th>High</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sizes.each do |size| %>
+      <tr>
+        <td><%= size.description %></td>
+        <td><%= size.low %></td>
+        <td><%= size.high %></td>
+        <td><%= link_to 'Show', size %></td>
+        <td><%= link_to 'Edit', edit_size_path(size) %></td>
+        <td><%= link_to 'Destroy', size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Size', new_size_path %>

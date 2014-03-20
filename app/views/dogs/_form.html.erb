@@ -1,3 +1,5 @@
+<%# <%= javascript_include_tag "dog_form" %>
+
 <%= form_for(@dog) do |f| %>
   <% if @dog.errors.any? %>
     <div id="error_explanation">
@@ -10,48 +12,42 @@
       </ul>
     </div>
   <% end %>
-
-  <table>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('name', scope: 'dog') %>:</th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('status', scope: 'dog') %>:</th>
-      <td><%= f.collection_select :status_id, Status.all, :id, :description, :prompt => false %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('birthdate', scope: 'dog') %>:</th>
-      <td><%= f.date_select :birtdate, discard_day: true, order: [:month, :year], start_year: Time.now.year - 20, end_year: Time.now.year %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('admission_date', scope: 'dog') %>:</th>
-      <td><%= f.date_select :admission, discard_day: true, order: [:month, :year], start_year: Time.now.year - 20, end_year: Time.now.year  %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('primary_color', scope: 'dog') %>:</th>
-      <td><%= f.collection_select :primary_color, Color.all, :id, :name, :prompt => false %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('secondary_color', scope: 'dog') %>:</th>
-      <td><%= f.collection_select :secondary_color, Color.all, :id, :name, :prompt => I18n.t("select_color", scope: 'dog') %></td>
-    </tr>
-    <tr>
-      <th class="text-right"><%= f.label I18n.t('size', scope: 'dog') %>:</th>
-      <td><%= f.collection_select :size_id, Size.all, :id, :description, :prompt => false %></td>
-    </tr>
-    <tr>
-      <th class="text-right" valign="top"><%= f.label I18n.t('origin', scope: 'dog') %>:</th>
-      <td><%= f.text_area :origin, rows: 10, cols: 80 %></td>
-    </tr>
-    <tr>
-      <th class="text-right" valign="top"><%= f.label I18n.t('personality', scope: 'dog') %>:</th>
-      <td><%= f.text_area :personality, rows: 10, cols: 80 %></td>
-    </tr>
-    <tr>
-      <td class="text-right" colspan="2">
-        <%= f.submit %>
-      </td>
-    </tr>
-  </table>
+  <dif class="form">
+    <table>
+      <tr>
+        <th>Nombre:</th>
+        <td><%= f.text_field :name, size: 40 %></td>
+        <th>Estado:</th>
+        <td><%= f.collection_select :status, Status.all, :description, :description, :prompt => false %></td>
+        <th>Sexo:</th>
+        <td><%= f.select :sex, options_for_select(["Macho", "Hembra"], @dog.sex || "Macho") %></td>
+      </tr>
+      <tr>
+        <th>Edad:</th>
+        <td><%= f.number_field :years, { min: 0, max: 20, value: diff_in_years(@dog.birthdate) } %> años y <%= f.number_field :months, { min: 0, max: 12, value: diff_in_months(@dog.birthdate) } %> meses</td>
+        <th>Admisión:</th>
+        <td colspan="3"><%= f.date_select :admission, discard_day: true, order: [:month, :year], start_year: Time.now.year - 20, end_year: Time.now.year  %></td>
+      </tr>
+      <tr>
+        <th>Tamaño:</th>
+        <td><%= f.collection_select :weight, Size.all, :average, :name, :prompt => false %></td>
+        <th>Colores:</th>
+        <td colspan="3"><%= f.text_field :colors, id: "colors", data: Color.all.map {|c| c.name} * ",", value: (@dog.colors || "").split(",") %><script> $('#colors').magicSuggest({width: 285, resultAsString: true }); </script></td>
+      </tr>
+      <tr>
+        <th>Personalidad:</th>
+        <td colspan="5"><%= f.text_field :personality, id: "personality", data: Personality.all.map {|c| c.description} * ",", value: (@dog.personality || "").split(",") %><script> $('#personality').magicSuggest({width: 675, resultAsString: true }); </script></td>
+      </tr>
+      <tr>
+        <th valign="top">Historia:</th>
+        <td colspan="5"><%= f.text_area :story, rows: 10, cols: 90 %></td>
+      </tr>
+      <tr>
+        <th colspan="6">
+          <%= link_to 'Cancelar', dogs_path %>
+          <%= f.submit class:"submit"%>
+        </th>
+      </tr>
+    </table>
+  </div>
 <% end %>

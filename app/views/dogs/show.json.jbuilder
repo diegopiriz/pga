@@ -1,1 +1,1 @@
-json.extract! @dog, :id, :name, :birtdate, :admission, :primary_color, :secondary_color, :origin, :personality, :size_id, :status_id, :created_at, :updated_at
+json.extract! @dog, :id, :name, :birthdate, :admission, :colors, :story, :personality, :weight, :status, :created_at, :updated_at

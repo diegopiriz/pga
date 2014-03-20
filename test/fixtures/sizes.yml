@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyString
+  description: pequeño
+  low: 0
+  high: 5
 
 two:
-  description: MyString
+  description: medio
+  low: 5
+  high: 10
+
+three:
+  description: grande
+  low: 10
+  high: 50

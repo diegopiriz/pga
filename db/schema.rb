@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305021309) do
+ActiveRecord::Schema.define(version: 20140319040438) do
 
   create_table "adopters", force: true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140305021309) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,20 +48,28 @@ ActiveRecord::Schema.define(version: 20140305021309) do
 
   create_table "dogs", force: true do |t|
     t.string   "name"
-    t.date     "birtdate"
+    t.date     "birthdate"
     t.date     "admission"
-    t.string   "primary_color"
-    t.string   "secondary_color"
-    t.text     "origin"
-    t.text     "personality"
-    t.integer  "size_id"
-    t.integer  "status_id"
+    t.string   "colors"
+    t.text     "story"
+    t.string   "personality"
+    t.integer  "weight"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sex"
+  end
+
+  create_table "personalities", force: true do |t|
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sizes", force: true do |t|
     t.string   "description"
+    t.integer  "low"
+    t.integer  "high"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

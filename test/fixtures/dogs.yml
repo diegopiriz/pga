@@ -1,23 +1,202 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  birtdate: 2014-03-04
-  admission: 2014-03-04
-  primary_color: MyString
-  secondary_color: MyString
-  origin: MyText
-  personality: MyText
-  size_id: 1
-  status_id: 1
-
+  name: aaaaa
+  birthdate: 2012-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 2
+  status: Adopción
+  sex: Macho
 two:
-  name: MyString
-  birtdate: 2014-03-04
-  admission: 2014-03-04
-  primary_color: MyString
-  secondary_color: MyString
-  origin: MyText
-  personality: MyText
-  size_id: 1
-  status_id: 1
+  name: bbbb
+  birthdate: 2012-03-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+three:
+  name: cccc
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 40
+  status: Adopción
+  sex: Hembra
+four:
+  name: four
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+five:
+  name: five
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+six:
+  name: six
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+seven:
+  name: seven
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+eight:
+  name: eight
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+nine:
+  name: nine
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+ten:
+  name: ten
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+eleven:
+  name: eleven
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+twelve:
+  name: twelve
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+thirteen:
+  name: thirteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+fourteen:
+  name: fourteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+fifteen:
+  name: fifteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+sixteen:
+  name: sixteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+seventeen:
+  name: seventeen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+eighteen:
+  name: eighteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+nineteen:
+  name: nineteen
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra
+twenty:
+  name: twenty
+  birthdate: 2014-01-01
+  admission: 2014-03-17
+  colors: Negro,Blanco
+  story: Encontrada en Paso de la Arena
+  personality: juguetón
+  weight: 7
+  status: Adopción
+  sex: Hembra

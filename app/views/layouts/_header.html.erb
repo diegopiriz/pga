@@ -10,16 +10,16 @@
 <div id="menu">
   <ul>
     <li class=<%=nav_class(current_page, "home")   %>>
-    <%= link_to I18n.t("home", scope: "navigation"), static_pages_home_path %>
+    <%= link_to "Principal", static_pages_home_path %>
     </li>
     <li class=<%=nav_class(current_page, "contact")   %>>
-    <%= link_to I18n.t("contact", scope: "navigation"), static_pages_contact_path %>
+    <%= link_to "Contacto", static_pages_contact_path %>
     </li>
     <li class=<%=nav_class(current_page, "search")   %>>
-    <%= link_to I18n.t("search", scope: "navigation"), static_pages_search_path %>
+    <%= link_to "Buscar", static_pages_search_path %>
     </li>
     <li class=<%=nav_class(current_page, "login")   %>>
-    <%= link_to I18n.t("login", scope: "navigation"), static_pages_login_path %>
+    <%= link_to "Entrar", static_pages_login_path %>
     </li>
   </ul>
 </div>

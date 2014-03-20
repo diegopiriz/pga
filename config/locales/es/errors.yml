@@ -1,0 +1,37 @@
+es:
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "no se pudo guardar este {{model}} porque se encontrÃ³ 1 error" 
+          other:  "no se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
+        # The variable :count is also available
+        body: "Se encontraron problemas con los siguientes campos:" 
+
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "no estÃ¡ incluido en la lista" 
+        exclusion: "estÃ¡ reservado" 
+        invalid: "no es vÃ¡lido" 
+        confirmation: "no coincide con la confirmaciÃ³n"
+        accepted: "debe ser aceptado"
+        empty: "no puede estar vacÃ­o"
+        blank: "no puede estar en blanco"
+        too_long: "es demasiado largo ({{count}} caracteres mÃ¡ximo)"
+        too_short: "es demasiado corto ({{count}} caracteres mÃ­nimo)"
+        wrong_length: "no tiene la longitud correcta ({{count}} caracteres exactos)"
+        taken: "ya estÃ¡ en uso"
+        not_a_number: "no es un nÃºmero"
+        greater_than: "debe ser mayor que {{count}}"
+        greater_than_or_equal_to: "debe ser mayor que o igual a {{count}}"
+        equal_to: "debe ser igual a {{count}}"
+        less_than: "debe ser menor que {{count}}"
+        less_than_or_equal_to: "debe ser menor que o igual a {{count}}"
+        odd: "debe ser impar"
+        even: "debe ser par"
+        greater_than_start_date: "debe ser posterior a la fecha de comienzo"
+        not_same_project: "no pertenece al mismo proyecto"
+        circular_dependency: "Esta relaciÃ³n podrÃ­a crear una dependencia circular"
+
+        # Append your own errors here or at the model/attributes scope.
