@@ -6,19 +6,24 @@ Pga::Application.routes.draw do
   resources :colors
 
   resources :statuses
-
-  resources :dogs
-
-  get "static_pages/home"
-  get "static_pages/search"
-  get "static_pages/contact"
-  get "static_pages/login"
   
   resources :adoptions
 
   resources :adopters
 
-  resources :dog_pictures
+  resources :dogs do
+    resources :dog_pictures do
+      get "serve", :on => :member
+    end
+  end
+  #resources :dogs
+
+  #resources :dog_pictures
+
+  get "static_pages/home"
+  get "static_pages/search"
+  get "static_pages/contact"
+  get "static_pages/login"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

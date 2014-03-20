@@ -45,5 +45,11 @@
   <%= @dog.sex %>
 </p>
 
+<h2>Pictures</h2>
+<%= render @dog.dog_pictures %>
+
+<h3>Add Picture</h3>
+<%= render 'dog_pictures/form' %>
+
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>

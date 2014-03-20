@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140319040438) do
   create_table "dog_pictures", force: true do |t|
     t.integer  "dog_id"
     t.binary   "data"
-    t.string   "type"
+    t.string   "mime_type"
     t.string   "filename"
     t.datetime "created_at"
     t.datetime "updated_at"
