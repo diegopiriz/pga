@@ -35,7 +35,7 @@ class Dog < ActiveRecord::Base
     end
 
     def validate_age
-      errors.add("la edad", "es invalida.") unless years > 0 || (years == 0 && months > 0)
+      errors.add("la edad", "es invalida.") unless years.to_i > 0 || (years.to_i == 0 && months.to_i > 0)
     end
 
     def validate_admission

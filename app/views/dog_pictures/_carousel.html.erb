@@ -1,0 +1,32 @@
+<%
+  dog = locals[:dog] 
+  carousel_id = "carousel_#{dog.id}"
+%>
+
+<% if dog.dog_pictures.size > 1 %>
+  <div id=<%=carousel_id%> class="carousel">
+    <ol class="carousel-indicators">
+      <% dog.dog_pictures.each_with_index do |picture, i| %>
+        <li data-target="#<%=carousel_id%>" data-slide-to="<%= i %>" class="<%='active' if i == 0 %>"></li>
+      <% end %>
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <% dog.dog_pictures.each_with_index do |picture, i| %>
+        <div class="item <%= i == 0 ? 'active' : ''%>">
+          <%= image_tag serve_dog_dog_picture_path(picture.dog.id, picture.id), size: "150x150" %>
+        </div>
+      <% end %>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#<%=carousel_id%>" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#<%=carousel_id%>" data-slide="next">&rsaquo;</a>
+  </div>
+  <script>
+    $('#<%=carousel_id%>').carousel({interval: false});
+  </script>
+<% elsif dog.dog_pictures.size == 1 %>
+  <%= image_tag serve_dog_dog_picture_path(dog.id, dog.dog_pictures.first.id), size: "150x150" %>
+<% else %>
+  <%= image_tag("generic_dog.jpg", size: "171x180") %>
+<% end %>
