@@ -1,6 +1,6 @@
 <p>
   <strong>Picture:</strong>
   <%= dog_picture.filename %>
-  <%= link_to 'Remove', [dog_picture.dog, dog_picture], :confirm => 'Really remove picture?', :method => :delete %>
+  <%= link_to 'Remove', [dog_picture.dog, dog_picture], data: { confirm: 'Really remove picture?' }, :method => :delete %>
 </p>
 <%= image_tag serve_dog_dog_picture_path(dog_picture.dog.id, dog_picture.id) %>

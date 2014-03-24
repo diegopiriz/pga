@@ -13,6 +13,14 @@
   <dif class="form">
     <table>
       <tr>
+        <th>Fotos:</th>
+        <td colspan="5">
+          <%= f.fields_for :dog_pictures do |builder| %>
+            <%= render "dog_pictures_fields", :f => builder %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
         <th>Nombre:</th>
         <td><%= f.text_field :name, size: 40 %></td>
         <th>Estado:</th>

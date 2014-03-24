@@ -1,0 +1,10 @@
+<ul class="image_list">
+  <% @dog.dog_pictures.each do |dp| %>
+    <li>
+      <%= image_tag serve_dog_dog_picture_path(@dog.id, dp.id) %>
+      <!-- Remove link -->
+      <%= link_to raw('&times;'), [@dog, dp], :confirm => 'Eliminar foto?', :method => :delete %>
+    </li>
+  <% end %>
+  <li><%= render 'dog_pictures/new' %></li>
+</ul>

@@ -15,10 +15,12 @@ class DogsController < ApplicationController
   # GET /dogs/new
   def new
     @dog = Dog.new
+    @dog.dog_pictures.build
   end
 
   # GET /dogs/1/edit
   def edit
+    @dog.dog_pictures.build
   end
 
   # POST /dogs
@@ -40,7 +42,6 @@ class DogsController < ApplicationController
   # PATCH/PUT /dogs/1
   # PATCH/PUT /dogs/1.json
   def update
-    puts dog_params
     respond_to do |format|
       if @dog.update(dog_params)
         format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
@@ -70,6 +71,19 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex)
+      p params
+      new_dog_pictures_attributes = params[:dog][:dog_pictures_attributes].map do |dp|
+        if dp[1].has_key? :data
+          {
+            mime_type: dp[1][:data].content_type,
+            filename:  dp[1][:data].original_filename,
+            data:      dp[1][:data].read
+          }
+        else
+          dp[1]
+        end
+      end
+      params[:dog][:dog_pictures_attributes] = new_dog_pictures_attributes
+      params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex, dog_pictures_attributes: [:id, :data, :mime_type, :filename, :_destroy] )
     end
 end

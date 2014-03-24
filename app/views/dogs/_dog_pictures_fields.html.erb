@@ -1,0 +1,11 @@
+<p>
+  <% if !f.object.filename.blank? %>
+    <%= image_tag serve_dog_dog_picture_path(f.object.dog.id, f.object.id) %>
+  <% end %>
+  <%#= f.label :filename %>
+  <%#= f.text_field :filename %>
+  <%= f.label :data %>
+  <%= f.file_field :data %>
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove Question" %>
+</p>
