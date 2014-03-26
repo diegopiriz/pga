@@ -215,14 +215,11 @@ h1 {
   }
 }
 
-
-.search_result {
-  img {
-    /*float: left;*/
-    margin-bottom: 5px;
-  }
-  .info {
-
+/* DOG's PICTURES */
+.pictures_list {
+  list-style-type: none;
+  li {
+    float: left;
   }
 }
 

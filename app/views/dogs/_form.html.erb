@@ -15,9 +15,11 @@
       <tr>
         <th>Fotos:</th>
         <td colspan="5">
-          <%= f.fields_for :dog_pictures do |builder| %>
-            <%= render "dog_pictures_fields", :f => builder %>
-          <% end %>
+          <ul class="pictures_list">
+            <%= f.fields_for :dog_pictures do |builder| %>
+              <%= render "dog_pictures_fields", :f => builder %>
+            <% end %>
+          </ul>
         </td>
       </tr>
       <tr>

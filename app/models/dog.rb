@@ -1,6 +1,6 @@
 class Dog < ActiveRecord::Base
 has_many :dog_pictures, :dependent => :destroy
-accepts_nested_attributes_for :dog_pictures, :allow_destroy => :true
+accepts_nested_attributes_for :dog_pictures, :allow_destroy => :true, :reject_if => lambda { |a| !a.has_key?(:id) && a[:data].blank? }
 
 attr_accessor :years
 attr_accessor :months
