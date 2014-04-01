@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: Tratamiento
+  description: en tratamiento
 
 two:
-  description: Adopción
+  description: en adopción
 
 three:
-  description: Adoptado
+  description: adoptado
 
 four:
-  description: Difunto
+  description: difunto
 
 five:
-  description: Perdido
+  description: perdido

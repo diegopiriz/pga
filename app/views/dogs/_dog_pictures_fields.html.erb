@@ -1,11 +1,14 @@
-<li>
+<li class="dog_picture_item">
   <% if !f.object.filename.blank? %>
     <%= image_tag serve_dog_dog_picture_path(f.object.dog.id, f.object.id), size: "100x100"%>
     <br />
     <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "Eliminar foto" %>
+    <%= f.label :_destroy, "Eliminar" %>
   <% else %>
-    <%= f.label :data %>
-    <%= f.file_field :data %>
+    <% id = rand(1000000) %>
+    <label for="<%=id%>">
+      <%= image_tag("new_dog.png", size: "100x100", class: "clickable preview") %>
+    <label>
+    <%= f.file_field :data, id: "#{id}", class: "hidden picture_upload" %>
   <% end %>
 </li>

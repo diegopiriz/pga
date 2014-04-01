@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 negro:
-  name: Negro
+  name: negro
   code: 000000
 
 blanco:
-  name: Blanco
+  name: blanco
   code: FFFFFF
 
 gris:
-  name: Gris
+  name: gris
   code: 888888

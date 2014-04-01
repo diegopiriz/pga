@@ -15,12 +15,14 @@ class DogsController < ApplicationController
   # GET /dogs/new
   def new
     @dog = Dog.new
-    @dog.dog_pictures.build
+    build_pictures
+    #@dog.dog_pictures.build
   end
 
   # GET /dogs/1/edit
   def edit
-    @dog.dog_pictures.build
+    build_pictures
+    #@dog.dog_pictures.build
   end
 
   # POST /dogs
@@ -63,6 +65,11 @@ class DogsController < ApplicationController
     end
   end
 
+
+  def search
+    @dogs = Dog.paginate(page: params[:page], :per_page => 9).order('name').search(params)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dog
@@ -85,5 +92,9 @@ class DogsController < ApplicationController
       end
       params[:dog][:dog_pictures_attributes] = new_dog_pictures_attributes
       params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex, dog_pictures_attributes: [:id, :data, :mime_type, :filename, :_destroy] )
+    end
+
+    def build_pictures
+      30.times { @dog.dog_pictures.build }
     end
 end

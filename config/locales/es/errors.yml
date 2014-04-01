@@ -35,3 +35,10 @@ es:
         circular_dependency: "Esta relaciÃ³n podrÃ­a crear una dependencia circular"
 
         # Append your own errors here or at the model/attributes scope.
+
+
+  helpers:
+    submit:
+      create: "Crear"
+      submit: "Guardar"
+      update: "Actualizar"

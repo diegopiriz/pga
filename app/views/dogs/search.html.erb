@@ -1,0 +1,6 @@
+<% provide(:current_page, "search") %>
+<% provide(:title, "Buscar") %>
+
+<h1>Buscador</h1>
+<%= render 'search_form' %>
+<%= render "thumbnail_list", locals: { columns: 3, dogs: @dogs} %>

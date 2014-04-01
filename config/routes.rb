@@ -21,7 +21,7 @@ Pga::Application.routes.draw do
   #resources :dog_pictures
 
   get "static_pages/home"
-  get "static_pages/search"
+  get "static_pages/search", to: 'dogs#search'
   get "static_pages/contact"
   get "static_pages/login"
 

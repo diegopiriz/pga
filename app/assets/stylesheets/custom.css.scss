@@ -244,3 +244,26 @@ h1 {
     }
   }
 }
+
+
+
+.clickable {
+  cursor: pointer;
+}
+
+
+.search {
+  table, th, td, tr {
+    /*border: solid red 1px;*/
+  }
+  th, td {
+    padding: 5px;
+    height: 45px;
+  }
+  th {
+    text-align: right;
+  }
+  .submit {
+    margin-right: 25px;
+  }
+}

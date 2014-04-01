@@ -20,7 +20,69 @@ validates :story, presence: true,  :length => { minimum: 20 }
 
 after_validation :set_birthdate
 
+  def self.search(params)
+    puts ">>>>>>>>>>>>>>>>>>>>#{params}"
+    if params
+      #Dog.where(condition(params))
+      find(:all, :conditions => build_conditions(params))
+      #find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      Dog.all
+    end
+  end
+
 private
+
+  def self.build_conditions(params)
+    conditions = []
+    if provided? params, :name
+      conditions << "name LIKE '%#{params[:name]}%'"
+    end
+    if provided? params, :status
+      conditions << "status = '#{params[:status]}'"
+    end
+    if provided? params, :sex
+      conditions << "sex = '#{params[:sex]}'"
+    end
+    if provided? params, :age
+      puppy = 6.months.ago.to_date
+      young_adult = 2.years.ago.to_date
+      adult = 6.years.ago.to_date
+      case params[:age]
+      when "Cachorro"
+        conditions << "birthdate >= #{puppy}"
+      when "Joven adulto"
+        conditions << "birthdate <  #{puppy}"
+        conditions << "birthdate >= #{young_adult}"
+      when "Adulto"
+        conditions << "birthdate <  #{young_adult}"
+        conditions << "birthdate >= #{adult}"
+      when "Adulto mayor"
+        conditions << "birthdate < #{adult}"
+      end
+    end
+    if provided? params, :size
+      size = Size.find(params[:size])
+      conditions << "weight >= #{size[:min]}"
+      conditions << "weight <  #{size[:max]}"
+    end
+    if provided? params, :colors
+      params[:colors].gsub(/[\"\[\]\s]/, "").split(',').each do |c|
+        conditions << "colors LIKE '%#{c}%'"
+      end
+    end
+    if provided? params, :personality
+      params[:personality].gsub(/[\"\[\]\s]/, "").split(',').each do |c|
+        conditions << "personality LIKE '%#{c}%'"
+      end
+    end
+    puts "BUSCANDO CON #{conditions * " AND "}"
+    conditions * " AND "
+  end
+
+  def self.provided?(hash, key)
+    hash.has_key?(key) && !hash[key].blank?
+  end
 
   def set_birthdate
     self.birthdate = Time.now - years.to_i.years - months.to_i.months
@@ -48,7 +110,6 @@ private
     valid_colors = Color.all.map {|c| c.name }
     errors.add("los colores", "no son validos") unless cs.all? {|c| valid_colors.include? c}
   end
-
 
   def validate_personality
     self.personality.split(",").each do |p|

@@ -1,0 +1,33 @@
+<div class="search">
+<%= form_tag static_pages_search_path, :method => 'get' do %>
+  <table>
+    <tr>
+      <th>Nombre:</th>
+      <td><%= text_field_tag :name, params[:name], size: 40 %></td>
+      <th>Estado:</th>
+      <td><%= select_tag :status, options_from_collection_for_select(Status.all, :description, :description), prompt: "Indiferente" %></td>
+    </tr>
+    <tr>
+      <th>Sexo:</th>
+      <td><%= select_tag :sex, options_for_select(['Macho', 'Hembra']), prompt: "Indiferente" %></td>
+      <th>Edad:</th>
+      <td><%= select_tag :age, options_for_select(["Cachorro", "Joven adulto", "Adulto", "Adulto mayor"]), prompt: "Indiferente" %></td>
+    </tr>
+    <tr>
+      <th>Tamaño:</th>
+      <td><%= select_tag :size, options_from_collection_for_select(Size.all, :id, :name), prompt: "Indiferente" %></td>
+      <th>Colores:</th>
+      <td colspan="3"><%= text_field_tag :colors, nil, { id: "colors", data: Color.all.map {|c| c.name} * "," } %><script> $('#colors').magicSuggest({width: 247, resultAsString: true, emptyText: "Indiferente" }); </script></td>
+    </tr>
+    <tr>
+      <th>Personalidad:</th>
+      <td colspan="5"><%= text_field_tag :personality, nil, { id: "personality", data: Personality.all.map {|c| c.description} * "," } %><script> $('#personality').magicSuggest({width: 630, resultAsString: true, emptyText: "Indiferente" }); </script></td>
+    </tr>
+    <tr>
+      <th colspan="6">
+        <%= submit_tag "Search" %>
+      </th>
+    </tr>
+  </table>
+<% end %>
+</div>

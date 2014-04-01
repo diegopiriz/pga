@@ -14,7 +14,7 @@
     <div class="carousel-inner">
       <% dog.dog_pictures.each_with_index do |picture, i| %>
         <div class="item <%= i == 0 ? 'active' : ''%>">
-          <%= image_tag serve_dog_dog_picture_path(picture.dog.id, picture.id), size: "150x150" %>
+          <%= image_tag serve_dog_dog_picture_path(picture.dog.id, picture.id), size: "171x180" %>
         </div>
       <% end %>
     </div>
@@ -26,7 +26,7 @@
     $('#<%=carousel_id%>').carousel({interval: false});
   </script>
 <% elsif dog.dog_pictures.size == 1 %>
-  <%= image_tag serve_dog_dog_picture_path(dog.id, dog.dog_pictures.first.id), size: "150x150" %>
+  <%= image_tag serve_dog_dog_picture_path(dog.id, dog.dog_pictures.first.id), size: "171x180" %>
 <% else %>
   <%= image_tag("generic_dog.jpg", size: "171x180") %>
 <% end %>
