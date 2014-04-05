@@ -50,15 +50,15 @@ private
       adult = 6.years.ago.to_date
       case params[:age]
       when "Cachorro"
-        conditions << "birthdate >= #{puppy}"
+        conditions << "birthdate >= '#{puppy}'"
       when "Joven adulto"
-        conditions << "birthdate <  #{puppy}"
-        conditions << "birthdate >= #{young_adult}"
+        conditions << "birthdate <  '#{puppy}'"
+        conditions << "birthdate >= '#{young_adult}'"
       when "Adulto"
-        conditions << "birthdate <  #{young_adult}"
-        conditions << "birthdate >= #{adult}"
+        conditions << "birthdate <  '#{young_adult}'"
+        conditions << "birthdate >= '#{adult}'"
       when "Adulto mayor"
-        conditions << "birthdate < #{adult}"
+        conditions << "birthdate < '#{adult}'"
       end
     end
     if provided? params, :size
