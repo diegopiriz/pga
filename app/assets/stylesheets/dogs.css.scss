@@ -1,3 +1,82 @@
 // Place all the styles related to the dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*DOG's FORM*/
+
+.form {
+  table, th, td, tr {
+    /*border: solid red 1px;*/
+  }
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: right;
+  }
+  .submit {
+    margin-right: 25px;
+  }
+}
+
+.delte_link {
+  float: right;
+  position: relative;
+  top: -35px;
+  color: red;
+}
+
+
+/* DOG's PICTURES */
+.pictures_list {
+  list-style-type: none;
+  li {
+    float: left;
+  }
+}
+
+
+
+.clickable {
+  cursor: pointer;
+}
+
+
+
+/*THUMBNAILS*/
+
+.thumbnail_list {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 25px 10px;
+  td {
+    padding: 15px;
+    border-radius: 10px;
+    border: solid gray 1px;
+  }
+}
+
+.thumbnail {
+  .info {
+    text-align: center;
+    h4 {
+      text-transform: uppercase;
+      span {
+        font-weight: bold;
+        font-family: Georgia;
+      }
+      .Macho {
+        color: skyblue;
+      }
+      .Hembra {
+        color: pink;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,9 +1,6 @@
 <h1>Todos los perros</h1>
 
 <%= will_paginate %>
-
-<br>
-
 <%= render "dogs/thumbnail_list", locals: { columns: 3, dogs: @dogs} %>
 
 <%= link_to 'New Dog', new_dog_path %>

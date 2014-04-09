@@ -1,0 +1,11 @@
+es:
+  helpers:
+    submit:
+      create: "Crear"
+      submit: "Guardar"
+      update: "Actualizar"
+
+  will_paginate:
+    next_label: "Siguiente"
+    previous_label: "Anterior"
+

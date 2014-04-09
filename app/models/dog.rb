@@ -63,8 +63,9 @@ private
     end
     if provided? params, :size
       size = Size.find(params[:size])
-      conditions << "weight >= #{size[:min]}"
-      conditions << "weight <  #{size[:max]}"
+      p size
+      conditions << "weight >= #{size[:low]}"
+      conditions << "weight <  #{size[:high]}"
     end
     if provided? params, :colors
       params[:colors].gsub(/[\"\[\]\s]/, "").split(',').each do |c|
