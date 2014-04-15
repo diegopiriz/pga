@@ -80,19 +80,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      p params
-      new_dog_pictures_attributes = params[:dog][:dog_pictures_attributes].map do |dp|
-        if dp[1].has_key? :data
-          {
-            mime_type: dp[1][:data].content_type,
-            filename:  dp[1][:data].original_filename,
-            data:      dp[1][:data].read
-          }
-        else
-          dp[1]
-        end
-      end
-      params[:dog][:dog_pictures_attributes] = new_dog_pictures_attributes
       params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex, dog_pictures_attributes: [:id, :data, :mime_type, :filename, :_destroy] )
     end
 

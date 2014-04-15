@@ -1,27 +1,26 @@
 class Dog < ActiveRecord::Base
-has_many :dog_pictures, :dependent => :destroy
-accepts_nested_attributes_for :dog_pictures, :allow_destroy => :true, :reject_if => lambda { |a| !a.has_key?(:id) && a[:data].blank? }
+  has_many :dog_pictures, :dependent => :destroy
+  accepts_nested_attributes_for :dog_pictures, :allow_destroy => :true, :reject_if => lambda { |a| !a.has_key?(:id) && a[:data].blank? }
 
-attr_accessor :years
-attr_accessor :months
+  attr_accessor :years
+  attr_accessor :months
 
-before_validation :set_colors
-before_validation :set_personality
+  before_validation :set_colors
+  before_validation :set_personality
 
-validates :name, presence: true,  :length => { minimum: 2, maximum: 20 }, uniqueness: true
-validates :status, inclusion: { :in => Status.all.map {|s| s.description } }
-validates :sex, inclusion: { in: ["Macho", "Hembra"] }
-validate  :validate_age
-validate  :validate_admission
-validates :weight, numericality: { greater_than_or_equal_to: Size.minimum("low"), less_than_or_equal_to: Size.maximum("high") }
-validate  :validate_colors
-validate  :validate_personality
-validates :story, presence: true,  :length => { minimum: 20 }
+  validates :name, presence: true,  :length => { minimum: 2, maximum: 20 }, uniqueness: true
+  validates :status, inclusion: { :in => Status.all.map {|s| s.description } }
+  validates :sex, inclusion: { in: ["Macho", "Hembra"] }
+  validate  :validate_age
+  validate  :validate_admission
+  validates :weight, numericality: { greater_than_or_equal_to: Size.minimum("low"), less_than_or_equal_to: Size.maximum("high") }
+  validate  :validate_colors
+  validate  :validate_personality
+  validates :story, presence: true,  :length => { minimum: 20 }
 
-after_validation :set_birthdate
+  after_validation :set_birthdate
 
   def self.search(params)
-    puts ">>>>>>>>>>>>>>>>>>>>#{params}"
     if params
       #Dog.where(condition(params))
       find(:all, :conditions => build_conditions(params))

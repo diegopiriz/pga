@@ -1,7 +1,7 @@
 <% dog = locals[:dog] %>
 <div class="thumbnail">
-    <%#= image_tag("generic_dog.jpg", size: "171x180") %>
-    <%#= image_tag serve_dog_dog_picture_path(dog.id, main_picture_id(dog)), size: "171x180" %>
+    <%#= image_tag("generic_dog.jpg", size: "180x180") %>
+    <%#= image_tag serve_dog_dog_picture_path(dog.id, main_picture_id(dog)), size: "180x180" %>
     <%= render "dog_pictures/carousel", locals: { dog: dog } %>
     <div class="info">
       <h4><%= dog.name %> - <span class=<%= dog.sex %>><%= raw sex_symbol(dog.sex) %></span></h4>
