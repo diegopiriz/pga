@@ -3,3 +3,4 @@ heroku pg:reset HEROKU_POSTGRESQL_CHARCOAL_URL --confirm pga
 heroku run rake db:migrate
 heroku run rake db:fixtures:load
 git push heroku master
+
