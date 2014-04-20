@@ -20,8 +20,8 @@ function readData(evt) {
     image.src = e.target.result;
     image.onload = function() {
     var canvas = document.createElement('canvas');
-    canvas.width = 300;
-    canvas.height = image.height * (300 / image.width);
+    canvas.width = 500;
+    canvas.height = image.height * (500 / image.width);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
@@ -40,7 +40,7 @@ function readData(evt) {
     });
 
     function imgSelect(selection) {
-      canvas.width = canvas.height = 100;
+      canvas.width = canvas.height = 500;
 
       var ctx = canvas.getContext('2d');
       ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h, 0, 0, canvas.width, canvas.height);
@@ -49,8 +49,7 @@ function readData(evt) {
       preview.attr('src', canvas.toDataURL());
       
       set_hidden_inputs(preview, canvas.toDataURL());
-      //preview.parent().find("input[type=hidden]").val(canvas.toDataURL());
-    }
+     }
     }
   }
   })(file);

@@ -1,0 +1,56 @@
+Dog:
+	id: integer
+	name: string
+	birthdate: date
+	admission: date
+	primary_color: string
+	secondary_color: string
+	origin: text
+	personality: text
+	size_id: integer
+	status_id: integer
+
+DogPicture:
+	id: integer
+	dog_id: integer
+	data: binary
+	type: string
+	filename: string
+
+Status:
+	id: integer
+	description: string
+
+Size:
+	id: integer
+	description: string
+
+Adopter:
+	id: integer
+	name: string
+	phone: string
+	email: string
+	address: text
+
+Adoption:
+	id: integer
+	adopter_id: integer
+	dog_id: integer
+	date:  date
+
+User:
+	id: integer
+	name: string
+	email: string
+	password_stuff: string
+
+rails generate scaffold dog name:string birtdate:date admission:date colors:string story:text personality:string weight:integer status:string
+rails generate model dog_picture dog_id:integer data:binary type:string filename:string
+rails generate scaffold status description:string
+rails generate scaffold color name:string code:string
+rails generate scaffold size description:string low:integer high:integer
+rails generate scaffold personality description:string
+rails generate scaffold adopter name:string phone:string email:string address:text
+rails generate scaffold adoption adopter_id:integer dog_id:integer date:date
+
+
