@@ -1,6 +1,7 @@
 <li class="dog_picture_item">
   <% if !f.object.data.blank? %>
-    <%= image_tag f.object.data, size: "100x100"%>
+    <%#= image_tag f.object.data, size: "100x100"%>
+    <%= image_tag serve_dog_dog_picture_path(f.object.dog.id, f.object.id), size: "100x100" %>
     <br />
     <%= f.check_box :_destroy %>
     <%= f.label :_destroy, "Eliminar" %>

@@ -1,0 +1,14 @@
+<% 
+  dog = locals[:dog]
+  modal_id = locals[:modal_id]
+%>
+<div class="buttons">
+  <a data-toggle="modal" href="<%=dog_path dog%>?layout=modal" data-target="#<%=modal_id%>">Ver</a> | 
+  <% if logged_user %>
+    <%= link_to 'Modificar', edit_dog_path(dog) %> |
+    <%= link_to 'Eliminar', dog, method: :delete, data: { confirm: 'Eliminar?' }, class: "bad" %>
+  <% else %>
+    <%= link_to 'Adoptar', edit_dog_path(dog) %> |
+    <%= link_to 'Apadrinar', edit_dog_path(dog) %> |
+  <% end %>
+</div>

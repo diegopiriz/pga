@@ -20,8 +20,12 @@ function readData(evt) {
     image.src = e.target.result;
     image.onload = function() {
     var canvas = document.createElement('canvas');
-    canvas.width = 500;
-    canvas.height = image.height * (500 / image.width);
+
+    var ratio = 400.0 / Math.max(image.height, image.width);
+    canvas.width = image.width * ratio;
+    canvas.height = image.height * ratio;
+
+
     var ctx = canvas.getContext('2d');
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
@@ -34,9 +38,10 @@ function readData(evt) {
       bgColor: 'black',
       bgOpacity: .6,
       setSelect: [0, 0, 100, 100],
+      minSize: [100, 100],
       aspectRatio: 1,
       onSelect: imgSelect,
-      onChange: imgSelect
+      //onChange: imgSelect
     });
 
     function imgSelect(selection) {
@@ -45,6 +50,7 @@ function readData(evt) {
       var ctx = canvas.getContext('2d');
       ctx.drawImage(img, selection.x, selection.y, selection.w, selection.h, 0, 0, canvas.width, canvas.height);
     
+      console.log(canvas.toDataURL())
       $('#image_output').attr('src', canvas.toDataURL());
       preview.attr('src', canvas.toDataURL());
       
@@ -59,7 +65,6 @@ function readData(evt) {
 
 function ready_fn() {
   var inputFile = $(".picture_upload");
-  //inputFile.click(function() {this.value = null;}, false);
   inputFile.change(readData);
   $('.dog_picture_item .preview:hidden').first().show();
 };

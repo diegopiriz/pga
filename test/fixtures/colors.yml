@@ -2,12 +2,12 @@
 
 negro:
   name: negro
-  code: 000000
+  code: "#000000"
 
 blanco:
   name: blanco
-  code: FFFFFF
+  code: "#FFFFFF"
 
 gris:
   name: gris
-  code: 888888
+  code: "#888888"

@@ -24,7 +24,7 @@
 .delete_link {
   float: right;
   position: relative;
-  top: -20px;
+  top: -40px;
   color: red;
 }
 
@@ -67,16 +67,84 @@
         font-weight: bold;
         font-family: Georgia;
       }
-      .Macho {
-        color: skyblue;
-      }
-      .Hembra {
-        color: pink;
-      }
     }
   }
 }
 
 a {
   text-decoration: none;
+}
+
+.macho {
+  color: skyblue;
+}
+.hembra {
+  color: pink; 
+}
+
+.status {
+  text-transform: uppercase;
+  float: right;
+  position: relative;
+  top: -40px;
+}
+.good {
+  color: green;
+}
+.soso {
+  color: orange;
+}
+.bad {
+  color: red;
+}
+
+.show_pictures {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.color {
+  padding: 10px;
+  /*display: inline;*/
+  float: left;
+  border: solid black 1px;
+  margin-left: 2px;
+}
+
+.show {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: dotted black 1px;
+  width: 500px;
+}
+
+.story {
+  text-align:justify;
+  padding-right: 15px;
+}
+
+.personality {
+  border: dotted gray 1px;
+  background-color: lightgray;
+  text-transform: uppercase;
+  padding: 3px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.modal {
+  width: 550px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  /*height: 550px;*/
+
 }

@@ -1,16 +1,17 @@
-<% dog = locals[:dog] %>
+<% 
+  dog = locals[:dog]
+  modal_id = "modal#{dog.id}"
+%>
+
 <div class="thumbnail">
-    <%#= image_tag("generic_dog.jpg", size: "180x180") %>
-    <%#= image_tag serve_dog_dog_picture_path(dog.id, main_picture_id(dog)), size: "180x180" %>
-    <%= render "dog_pictures/carousel", locals: { dog: dog } %>
-    <div class="info">
-      <h4><%= dog.name %> - <span class=<%= dog.sex %>><%= raw sex_symbol(dog.sex) %></span></h4>
-      <%= image_tag(size_image(dog), size: "100x50") %>
-      <h5><%= age(dog) %></h5>
-      <div class="buttons">
-        <%= link_to 'Show', dog %>
-        <%= link_to 'Edit', edit_dog_path(dog) %>
-        <%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Eliminar?' } %>
-      </div>
-    </div>
+  <%= render "dog_pictures/carousel", locals: { dog: dog, size: "250x250"  } %>
+  <div class="info">
+    <h4><%= dog.name %> - <span class=<%= dog.sex.downcase %>><%= raw sex_symbol(dog.sex) %></span></h4>
+    <%= image_tag(size_image(dog), size: "100x50") %>
+    <h5><%= age(dog) %></h5>
+    <%= render 'dogs/action_buttons', locals: { dog: dog, modal_id: modal_id } %>
+  </div>
+  <!-- Modal -->
+  <div id="<%=modal_id%>" class="modal hidden fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  </div>
 </div>

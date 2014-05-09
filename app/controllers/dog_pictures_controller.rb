@@ -37,7 +37,7 @@ class DogPicturesController < ApplicationController
   def serve
     @dog = Dog.find(params[:dog_id])
     @dog_picture = @dog.dog_pictures.find(params[:id])
-    send_data(@dog_picture.data, :type => @dog_picture.mime_type, :filename => "#{@dog_picture.filename}.jpg", :disposition => "inline")
+    send_data(@dog_picture.data, :type => "image/png", :filename => "image.png", :disposition => "inline")
   end
 
   private

@@ -22,9 +22,7 @@ class Dog < ActiveRecord::Base
 
   def self.search(params)
     if params
-      #Dog.where(condition(params))
       find(:all, :conditions => build_conditions(params))
-      #find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else
       Dog.all
     end

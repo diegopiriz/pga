@@ -3,20 +3,16 @@
   dogs = (defined?(locals) && locals[:dogs]) || top_dogs
   rows = (dogs.size.to_f / columns).ceil
 %>
-<table class="thumbnail_list">
 <% rows.times do |r| %>
-  <tr>
+  <div class="row">
     <% columns.times do |c| %>
-    <td>
-      <div>
+      <div class="col-sm-6 col-md-4">
         <% dog = dogs[r * columns + c] %>
         <% if dog %>
           <%= render 'dogs/thumbnail', locals: { dog: dog } %>
         <% end %>
       </div>
-    </td>
     <% end %>
   </div>
-  </tr>
+  <br />
 <% end %>
-</table>

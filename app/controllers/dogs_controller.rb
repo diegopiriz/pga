@@ -10,19 +10,21 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    if params[:layout] == 'modal'
+      render action: 'show', layout: 'modal'
+    end
   end
+
 
   # GET /dogs/new
   def new
     @dog = Dog.new
     build_pictures
-    #@dog.dog_pictures.build
   end
 
   # GET /dogs/1/edit
   def edit
     build_pictures
-    #@dog.dog_pictures.build
   end
 
   # POST /dogs
@@ -80,7 +82,7 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex, dog_pictures_attributes: [:id, :data, :mime_type, :filename, :_destroy] )
+      params.require(:dog).permit(:name, :years, :months, :admission, :colors, :story, :personality, :weight, :status, :sex, dog_pictures_attributes: [:id, :data, :_destroy] )
     end
 
     def build_pictures

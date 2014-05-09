@@ -4,7 +4,7 @@ one:
   name: aaaaa
   birthdate: 2012-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 2
@@ -14,7 +14,7 @@ two:
   name: bbbb
   birthdate: 2012-03-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -24,7 +24,7 @@ three:
   name: cccc
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 40
@@ -34,7 +34,7 @@ four:
   name: four
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -44,7 +44,7 @@ five:
   name: five
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -54,7 +54,7 @@ six:
   name: six
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -64,7 +64,7 @@ seven:
   name: seven
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -74,7 +74,7 @@ eight:
   name: eight
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -84,7 +84,7 @@ nine:
   name: nine
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -94,7 +94,7 @@ ten:
   name: ten
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -104,7 +104,7 @@ eleven:
   name: eleven
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -114,7 +114,7 @@ twelve:
   name: twelve
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -124,7 +124,7 @@ thirteen:
   name: thirteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -134,7 +134,7 @@ fourteen:
   name: fourteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -144,7 +144,7 @@ fifteen:
   name: fifteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -154,7 +154,7 @@ sixteen:
   name: sixteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -164,7 +164,7 @@ seventeen:
   name: seventeen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -174,7 +174,7 @@ eighteen:
   name: eighteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -184,7 +184,7 @@ nineteen:
   name: nineteen
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7
@@ -194,7 +194,7 @@ twenty:
   name: twenty
   birthdate: 2014-01-01
   admission: 2014-03-17
-  colors: Negro,Blanco
+  colors: negro,blanco
   story: Encontrada en Paso de la Arena
   personality: juguetón
   weight: 7

@@ -38,7 +38,7 @@ module DogsHelper
     end
 
     def size(dog)
-      Size.where("low <= ?", dog.weight).where("high > ?", dog.weight).take.description
+      Size.where("low <= ?", dog.weight).where("high > ?", dog.weight).take
     end
 
     def sex_symbol(sex)
@@ -50,7 +50,7 @@ module DogsHelper
     end
 
     def size_image(dog)
-      size_desc = size(dog)
+      size_desc = size(dog).description
       if "pequeño".casecmp(size_desc) == 0
         "size_small.png"
       elsif "medio".casecmp(size_desc) == 0
@@ -62,6 +62,16 @@ module DogsHelper
       end
     end
           
+    def status_class(dog)
+      case dog.status.downcase
+      when "adopción", "adoptado"
+        "good"
+      when "en tratamiento"
+        "soso"
+      else
+        "bad"
+      end
+    end
         
 
     private 

@@ -8,6 +8,7 @@
 /* ARTICLE */
 
 #article {
+  /*width: 900px;*/
   img {
     float: right;
     margin: 0px 10px 0px 10px;
@@ -20,13 +21,10 @@
     /*border: solid red 1px;*/
   }
   th, td {
-    padding: 5px;
-    height: 45px;
+    /*padding: 5px;*/
+    /*height: 45px;*/
   }
   th {
     text-align: right;
-  }
-  .submit {
-    margin-right: 25px;
   }
 }
